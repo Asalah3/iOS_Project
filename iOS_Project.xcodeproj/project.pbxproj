@@ -115,6 +115,7 @@
 		C97B63802A1FBEE4005D11AD /* iOS_Project */ = {
 			isa = PBXGroup;
 			children = (
+				C9BB226A2A1F482600C73954 /* NetworkLayer */,
 				C9BB22592A1F444200C73954 /* Models */,
 				C9BB22582A1F441900C73954 /* Module */,
 				CF7795CE2A2039D2004C50B3 /* Utilities */,
@@ -189,6 +190,13 @@
 				C9BB22682A1F453F00C73954 /* DetailsStoryboard.storyboard */,
 			);
 			path = Details;
+			sourceTree = "<group>";
+		};
+		C9BB226A2A1F482600C73954 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NetworkLayer;
 			sourceTree = "<group>";
 		};
 		CF7795CE2A2039D2004C50B3 /* Utilities */ = {

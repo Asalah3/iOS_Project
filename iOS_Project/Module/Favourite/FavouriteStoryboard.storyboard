@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -37,18 +37,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="373" height="190"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jqP-81-IhW">
+                                                <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="jqP-81-IhW">
                                                     <rect key="frame" x="5" y="5" width="363" height="180"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 20" translatesAutoresizingMaskIntoConstraints="NO" id="Us2-BN-Tgn">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="Us2-BN-Tgn">
                                                             <rect key="frame" x="0.0" y="0.0" width="363" height="180"/>
                                                         </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jSS-pV-uXO" customClass="GradientView" customModule="iOS_Project" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="0.0" width="363" height="180"/>
                                                         </view>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like" translatesAutoresizingMaskIntoConstraints="NO" id="lyQ-ep-Icp">
-                                                            <rect key="frame" x="15.000000000000004" y="23" width="58.333333333333343" height="60"/>
-                                                        </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Veg Noodles Recipe" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IiP-20-daw">
                                                             <rect key="frame" x="197.66666666666663" y="0.0" width="145.33333333333337" height="72"/>
                                                             <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="18"/>
@@ -80,10 +77,25 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <button opaque="NO" contentMode="redraw" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vz7-51-GDh">
+                                                            <rect key="frame" x="19" y="21.666666666666742" width="30" height="30"/>
+                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <state key="normal" title="Button"/>
+                                                            <buttonConfiguration key="configuration" style="plain">
+                                                                <imageReference key="image" image="heart" catalog="system" symbolScale="small"/>
+                                                                <backgroundConfiguration key="background" cornerRadius="10">
+                                                                    <color key="backgroundColor" red="0.85098039219999999" green="0.58823529409999997" blue="0.31764705879999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </backgroundConfiguration>
+                                                            </buttonConfiguration>
+                                                            <connections>
+                                                                <action selector="addFavouriteButton:" destination="9Ed-U5-JiN" eventType="touchUpInside" id="dLk-D6-fI4"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstItem="tcP-gS-FWN" firstAttribute="leading" secondItem="m6d-XK-PpD" secondAttribute="leading" id="2Bc-Ih-6W9"/>
+                                                        <constraint firstItem="vz7-51-GDh" firstAttribute="height" secondItem="jqP-81-IhW" secondAttribute="height" multiplier="0.166667" id="2ob-jd-lz8"/>
                                                         <constraint firstItem="m6d-XK-PpD" firstAttribute="leading" secondItem="IiP-20-daw" secondAttribute="leading" id="4mP-To-zpX"/>
                                                         <constraint firstItem="m6d-XK-PpD" firstAttribute="top" secondItem="IiP-20-daw" secondAttribute="bottom" constant="8" symbolic="YES" id="74G-sQ-KXu"/>
                                                         <constraint firstItem="tcP-gS-FWN" firstAttribute="top" secondItem="m6d-XK-PpD" secondAttribute="bottom" constant="8" symbolic="YES" id="9u1-pw-Vw0"/>
@@ -98,20 +110,19 @@
                                                         <constraint firstItem="tcP-gS-FWN" firstAttribute="width" secondItem="Us2-BN-Tgn" secondAttribute="width" multiplier="0.0826446" id="Q2a-vD-eWL"/>
                                                         <constraint firstAttribute="bottom" secondItem="jSS-pV-uXO" secondAttribute="bottom" id="RYa-2X-01G"/>
                                                         <constraint firstItem="KDV-Ia-Dlg" firstAttribute="top" secondItem="tcP-gS-FWN" secondAttribute="bottom" constant="0.33333333333331439" id="SC4-TU-lQd"/>
+                                                        <constraint firstItem="vz7-51-GDh" firstAttribute="leading" secondItem="jqP-81-IhW" secondAttribute="leading" constant="19" id="SyP-Fu-pag"/>
                                                         <constraint firstItem="Us2-BN-Tgn" firstAttribute="top" secondItem="jqP-81-IhW" secondAttribute="top" id="Vhd-Z0-tKH"/>
-                                                        <constraint firstItem="lyQ-ep-Icp" firstAttribute="width" secondItem="jqP-81-IhW" secondAttribute="width" multiplier="0.160858" id="Vlp-oa-F10"/>
                                                         <constraint firstItem="IiP-20-daw" firstAttribute="width" secondItem="jqP-81-IhW" secondAttribute="width" multiplier="0.4" id="WgD-we-aiG"/>
                                                         <constraint firstItem="jSS-pV-uXO" firstAttribute="leading" secondItem="jqP-81-IhW" secondAttribute="leading" id="XXb-2H-HvG"/>
                                                         <constraint firstItem="Ibf-zi-cLc" firstAttribute="trailing" secondItem="m6d-XK-PpD" secondAttribute="trailing" id="ZFJ-0D-dtF"/>
                                                         <constraint firstItem="PpX-Ex-SFZ" firstAttribute="top" secondItem="KDV-Ia-Dlg" secondAttribute="top" id="ZVb-Qx-IEA"/>
                                                         <constraint firstItem="PpX-Ex-SFZ" firstAttribute="top" secondItem="Ibf-zi-cLc" secondAttribute="bottom" constant="0.33333333333331439" id="cTb-pQ-Suj"/>
                                                         <constraint firstItem="Us2-BN-Tgn" firstAttribute="height" secondItem="jqP-81-IhW" secondAttribute="height" id="eKI-Q7-Vgb"/>
-                                                        <constraint firstItem="lyQ-ep-Icp" firstAttribute="leading" secondItem="jqP-81-IhW" secondAttribute="leading" constant="15" id="ij7-Hu-D4q"/>
                                                         <constraint firstItem="m6d-XK-PpD" firstAttribute="trailing" secondItem="IiP-20-daw" secondAttribute="trailing" id="kxN-gj-R0d"/>
-                                                        <constraint firstItem="lyQ-ep-Icp" firstAttribute="height" secondItem="jqP-81-IhW" secondAttribute="height" multiplier="0.333333" id="kxT-vp-eJl"/>
                                                         <constraint firstItem="KDV-Ia-Dlg" firstAttribute="leading" secondItem="tcP-gS-FWN" secondAttribute="leading" id="pRc-Fs-N1D"/>
                                                         <constraint firstItem="KDV-Ia-Dlg" firstAttribute="trailing" secondItem="tcP-gS-FWN" secondAttribute="trailing" id="pg2-o4-k32"/>
                                                         <constraint firstItem="Us2-BN-Tgn" firstAttribute="width" secondItem="jqP-81-IhW" secondAttribute="width" id="psg-XW-kTK"/>
+                                                        <constraint firstItem="vz7-51-GDh" firstAttribute="top" secondItem="jqP-81-IhW" secondAttribute="top" constant="21.666666666666742" id="qwd-iE-uQP"/>
                                                         <constraint firstItem="Us2-BN-Tgn" firstAttribute="leading" secondItem="jqP-81-IhW" secondAttribute="leading" id="r4C-Fo-5Xp"/>
                                                         <constraint firstAttribute="trailing" secondItem="IiP-20-daw" secondAttribute="trailing" constant="20" id="ryY-Rr-OqW"/>
                                                         <constraint firstItem="PpX-Ex-SFZ" firstAttribute="trailing" secondItem="Ibf-zi-cLc" secondAttribute="trailing" id="sn9-au-wvX"/>
@@ -120,7 +131,7 @@
                                                         <constraint firstItem="Ibf-zi-cLc" firstAttribute="leading" secondItem="tcP-gS-FWN" secondAttribute="trailing" constant="7.3333333333333428" id="ufO-9y-gur"/>
                                                         <constraint firstItem="IiP-20-daw" firstAttribute="height" secondItem="jqP-81-IhW" secondAttribute="height" multiplier="0.4" id="v89-HP-LFd"/>
                                                         <constraint firstAttribute="trailing" secondItem="Us2-BN-Tgn" secondAttribute="trailing" id="ybf-Bw-WNe"/>
-                                                        <constraint firstItem="lyQ-ep-Icp" firstAttribute="top" secondItem="jqP-81-IhW" secondAttribute="top" constant="23" id="ynE-88-euW"/>
+                                                        <constraint firstItem="vz7-51-GDh" firstAttribute="width" secondItem="jqP-81-IhW" secondAttribute="width" multiplier="0.0826446" id="zMW-Bb-JAz"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -132,7 +143,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="addToFavourite" destination="lyQ-ep-Icp" id="PVI-TY-5Tb"/>
                                             <outlet property="categoryName" destination="Ibf-zi-cLc" id="fef-4K-5um"/>
                                             <outlet property="chiefName" destination="m6d-XK-PpD" id="bXL-ec-O07"/>
                                             <outlet property="grediantView" destination="jSS-pV-uXO" id="KaU-W0-Gsm"/>
@@ -176,10 +186,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Rectangle 20" width="383" height="174"/>
         <image name="fork-and-knife-with-plate" width="16" height="17"/>
         <image name="fork.knife" catalog="system" width="94" height="128"/>
-        <image name="like" width="41" height="41"/>
+        <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="image" width="720" height="720"/>
         <image name="no favouriteplace holder" width="266.66665649414062" height="315.66665649414062"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -14,8 +14,8 @@ class FavouriteItems{
     static var favouriteItems = FavouriteItems()
     
     private init() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        context = appDelegate.persistentContainer.viewContext
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        context = appDelegate?.persistentContainer.viewContext
         entity = NSEntityDescription.entity(forEntityName: "FavouriteItem", in: context!)
     }
     
@@ -49,7 +49,7 @@ class FavouriteItems{
         var favouritesList : [NSManagedObject]?
         favouritesList = FavouriteItems.favouriteItems.fetchFavouriteItems()
         favouritesList?.forEach{ data in
-            let favId = data.value(forKey: "favouriteId") as! Int
+            let favId = data.value(forKey: "favouriteId") as? Int
             if favId == favouriteId{
                 favouriteItem = data
                 do {
@@ -77,7 +77,7 @@ class FavouriteItems{
         } catch {
             print("Failed")
         }
-        return favouritesList!
+        return favouritesList ?? []
     }
     
     func checkIfInserted(favouriteId : Int) -> Bool {
@@ -85,7 +85,7 @@ class FavouriteItems{
         var favouritesList : [NSManagedObject]?
         favouritesList = FavouriteItems.favouriteItems.fetchFavouriteItems()
         favouritesList?.forEach{ data in
-            let favId = data.value(forKey: "favouriteId") as! Int
+            let favId = data.value(forKey: "favouriteId") as? Int
             if favId == favouriteId{
                 result =  true
             }

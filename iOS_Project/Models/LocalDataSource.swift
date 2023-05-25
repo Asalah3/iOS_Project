@@ -21,7 +21,7 @@ class FavouriteItems{
     
     
     func InsertItem(favouriteName : String , favouriteId : Int , favouriteImage : String, favouriteMealCheif: String ,favouriteMealType: String,favouriteServings: String){
-        let newItem = NSManagedObject(entity: entity!, insertInto: context)
+        let newItem = NSManagedObject(entity: entity ?? NSEntityDescription(), insertInto: context)
         newItem.setValue(favouriteId, forKey: "favouriteId")
         newItem.setValue(favouriteName, forKey: "favouriteName")
         newItem.setValue(favouriteImage, forKey: "favouriteImage")
@@ -53,7 +53,7 @@ class FavouriteItems{
             if favId == favouriteId{
                 favouriteItem = data
                 do {
-                    context?.delete(favouriteItem!)
+                    context?.delete(favouriteItem ?? NSManagedObject())
                     try context?.save()
                 } catch {
                     print("Failed")
@@ -70,10 +70,12 @@ class FavouriteItems{
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "FavouriteItem")
         request.returnsObjectsAsFaults = false
         do {
-            let result = try context?.fetch(request)
-            for data in result as! [NSManagedObject]{
-                favouritesList?.append(data)
+            if let result = try context?.fetch(request) as? [NSManagedObject]{
+                for data in result{
+                    favouritesList?.append(data)
+                }
             }
+            
         } catch {
             print("Failed")
         }

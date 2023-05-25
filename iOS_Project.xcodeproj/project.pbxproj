@@ -17,6 +17,12 @@
 		C97B639C2A1FBEE8005D11AD /* iOS_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97B639B2A1FBEE8005D11AD /* iOS_ProjectTests.swift */; };
 		C97B63A62A1FBEE8005D11AD /* iOS_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97B63A52A1FBEE8005D11AD /* iOS_ProjectUITests.swift */; };
 		C97B63A82A1FBEE8005D11AD /* iOS_ProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97B63A72A1FBEE8005D11AD /* iOS_ProjectUITestsLaunchTests.swift */; };
+		C9BB225C2A1F44A400C73954 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BB225B2A1F44A400C73954 /* HomeViewController.swift */; };
+		C9BB225E2A1F44AF00C73954 /* HomeStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9BB225D2A1F44AF00C73954 /* HomeStoryboard.storyboard */; };
+		C9BB22612A1F44D400C73954 /* FavouriteStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9BB22602A1F44D400C73954 /* FavouriteStoryboard.storyboard */; };
+		C9BB22632A1F44E900C73954 /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BB22622A1F44E900C73954 /* FavouriteViewController.swift */; };
+		C9BB22662A1F450D00C73954 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BB22652A1F450D00C73954 /* DetailsViewController.swift */; };
+		C9BB22692A1F453F00C73954 /* DetailsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9BB22682A1F453F00C73954 /* DetailsStoryboard.storyboard */; };
 		CF7795D02A2039EF004C50B3 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7795CF2A2039EF004C50B3 /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +58,12 @@
 		C97B63A12A1FBEE8005D11AD /* iOS_ProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_ProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C97B63A52A1FBEE8005D11AD /* iOS_ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_ProjectUITests.swift; sourceTree = "<group>"; };
 		C97B63A72A1FBEE8005D11AD /* iOS_ProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_ProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C9BB225B2A1F44A400C73954 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C9BB225D2A1F44AF00C73954 /* HomeStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeStoryboard.storyboard; sourceTree = "<group>"; };
+		C9BB22602A1F44D400C73954 /* FavouriteStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavouriteStoryboard.storyboard; sourceTree = "<group>"; };
+		C9BB22622A1F44E900C73954 /* FavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
+		C9BB22652A1F450D00C73954 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		C9BB22682A1F453F00C73954 /* DetailsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsStoryboard.storyboard; sourceTree = "<group>"; };
 		CF7795CF2A2039EF004C50B3 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,14 +115,16 @@
 		C97B63802A1FBEE4005D11AD /* iOS_Project */ = {
 			isa = PBXGroup;
 			children = (
+				C9BB22592A1F444200C73954 /* Models */,
+				C9BB22582A1F441900C73954 /* Module */,
 				CF7795CE2A2039D2004C50B3 /* Utilities */,
 				C97B63812A1FBEE4005D11AD /* AppDelegate.swift */,
 				C97B63832A1FBEE4005D11AD /* SceneDelegate.swift */,
-				C97B63852A1FBEE4005D11AD /* ViewController.swift */,
 				C97B63872A1FBEE4005D11AD /* Main.storyboard */,
 				C97B638D2A1FBEE7005D11AD /* Assets.xcassets */,
 				C97B638F2A1FBEE7005D11AD /* LaunchScreen.storyboard */,
 				C97B63922A1FBEE7005D11AD /* Info.plist */,
+				C97B63852A1FBEE4005D11AD /* ViewController.swift */,
 				C97B638A2A1FBEE4005D11AD /* iOS_Project.xcdatamodeld */,
 			);
 			path = iOS_Project;
@@ -131,6 +145,50 @@
 				C97B63A72A1FBEE8005D11AD /* iOS_ProjectUITestsLaunchTests.swift */,
 			);
 			path = iOS_ProjectUITests;
+			sourceTree = "<group>";
+		};
+		C9BB22582A1F441900C73954 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				C9BB22642A1F44F500C73954 /* Details */,
+				C9BB225F2A1F44B300C73954 /* Favourite */,
+				C9BB225A2A1F446600C73954 /* Home */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		C9BB22592A1F444200C73954 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C9BB225A2A1F446600C73954 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C9BB225B2A1F44A400C73954 /* HomeViewController.swift */,
+				C9BB225D2A1F44AF00C73954 /* HomeStoryboard.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C9BB225F2A1F44B300C73954 /* Favourite */ = {
+			isa = PBXGroup;
+			children = (
+				C9BB22602A1F44D400C73954 /* FavouriteStoryboard.storyboard */,
+				C9BB22622A1F44E900C73954 /* FavouriteViewController.swift */,
+			);
+			path = Favourite;
+			sourceTree = "<group>";
+		};
+		C9BB22642A1F44F500C73954 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				C9BB22652A1F450D00C73954 /* DetailsViewController.swift */,
+				C9BB22682A1F453F00C73954 /* DetailsStoryboard.storyboard */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 		CF7795CE2A2039D2004C50B3 /* Utilities */ = {
@@ -245,8 +303,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9BB22692A1F453F00C73954 /* DetailsStoryboard.storyboard in Resources */,
 				C97B63912A1FBEE7005D11AD /* LaunchScreen.storyboard in Resources */,
 				C97B638E2A1FBEE7005D11AD /* Assets.xcassets in Resources */,
+				C9BB22612A1F44D400C73954 /* FavouriteStoryboard.storyboard in Resources */,
+				C9BB225E2A1F44AF00C73954 /* HomeStoryboard.storyboard in Resources */,
 				C97B63892A1FBEE4005D11AD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,8 +336,11 @@
 				C97B63862A1FBEE4005D11AD /* ViewController.swift in Sources */,
 				C97B638C2A1FBEE4005D11AD /* iOS_Project.xcdatamodeld in Sources */,
 				C97B63822A1FBEE4005D11AD /* AppDelegate.swift in Sources */,
+				C9BB22662A1F450D00C73954 /* DetailsViewController.swift in Sources */,
 				CF7795D02A2039EF004C50B3 /* Utilities.swift in Sources */,
+				C9BB22632A1F44E900C73954 /* FavouriteViewController.swift in Sources */,
 				C97B63842A1FBEE4005D11AD /* SceneDelegate.swift in Sources */,
+				C9BB225C2A1F44A400C73954 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

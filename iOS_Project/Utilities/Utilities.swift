@@ -44,7 +44,7 @@ class Utilities{
      let confirmAction = UIAlertAction(title: "Save", style: .default){ action in
          self.insertItemToFavourites()
      }
-     MakeAlert.displayAlert(title: "Saving!!", message: "Do you want to save this Team to favourite?", action: confirmAction, controller: self)
+     MakeAlert.displayAlert(title: "Saving!!", message: "Do you want to save this Team to favourite?", action: [confirmAction], controller: self)
      
      */
 }

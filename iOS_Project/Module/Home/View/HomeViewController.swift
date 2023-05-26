@@ -20,12 +20,12 @@ class HomeViewController: UIViewController , UITableViewDelegate,UITableViewData
         
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        0
+        3
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "item", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FavouriteTableViewCell", for: indexPath) as! FavouriteTableViewCell
         
     
         return cell
@@ -35,9 +35,9 @@ class HomeViewController: UIViewController , UITableViewDelegate,UITableViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "item", for: indexPath) as! CategoriesCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "item", for: indexPath) as! CategoryCollectionViewCell
         
-        cell.categoryName.text = caterNames[indexPath.row]
+        cell.catergoryName.text = caterNames[indexPath.row]
         cell.catergoryImage.image = UIImage(named: caterNames[indexPath.row])
     
         return cell

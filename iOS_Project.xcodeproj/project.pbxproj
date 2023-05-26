@@ -27,6 +27,7 @@
 		C9BB22662A1F450D00C73954 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BB22652A1F450D00C73954 /* DetailsViewController.swift */; };
 		C9BB22692A1F453F00C73954 /* DetailsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9BB22682A1F453F00C73954 /* DetailsStoryboard.storyboard */; };
 		C9BB226C2A1F5DA100C73954 /* FavouriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BB226B2A1F5DA100C73954 /* FavouriteTableViewCell.swift */; };
+		C9BB226E2A1F72B000C73954 /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BB226D2A1F72B000C73954 /* LocalDataSource.swift */; };
 		C9BBA37E2ADB2016721B9D4F /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
 		CF40F30A2A20C2D200597260 /* CategoryCollectionViewCelll.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF40F3092A20C2D200597260 /* CategoryCollectionViewCelll.swift */; };
 		CF40F30C2A20C3D900597260 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF40F30B2A20C3D900597260 /* GradientView.swift */; };
@@ -81,6 +82,7 @@
 		C9BB22652A1F450D00C73954 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		C9BB22682A1F453F00C73954 /* DetailsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsStoryboard.storyboard; sourceTree = "<group>"; };
 		C9BB226B2A1F5DA100C73954 /* FavouriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTableViewCell.swift; sourceTree = "<group>"; };
+		C9BB226D2A1F72B000C73954 /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
 		CF40F3092A20C2D200597260 /* CategoryCollectionViewCelll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCelll.swift; sourceTree = "<group>"; };
 		CF40F30B2A20C3D900597260 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		CF7795CF2A2039EF004C50B3 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 		C9BB22592A1F444200C73954 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C9BB226D2A1F72B000C73954 /* LocalDataSource.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9BB226E2A1F72B000C73954 /* LocalDataSource.swift in Sources */,
 				CF8557AB2A20A3460019137E /* BuildFile in Sources */,
 				C97B63862A1FBEE4005D11AD /* ViewController.swift in Sources */,
 				CF8557B52A20AEB60019137E /* BuildFile in Sources */,

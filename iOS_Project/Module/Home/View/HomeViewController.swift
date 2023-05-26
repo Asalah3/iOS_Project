@@ -11,7 +11,7 @@ class HomeViewController: UIViewController , UITableViewDelegate,UITableViewData
     
     @IBOutlet weak var categoryCollection: UICollectionView!
     @IBOutlet weak var catergoryMeals: UITableView!
-    let caterNames = ["Popular","Breakfast","Lunch","Dinner","Dessert"]
+    let categoryNames = ["Popular","Breakfast","Lunch","Dinner","Dessert"]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Food Recipies"
@@ -25,22 +25,22 @@ class HomeViewController: UIViewController , UITableViewDelegate,UITableViewData
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FavouriteTableViewCell", for: indexPath) as! FavouriteTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FavouriteTableViewCell", for: indexPath) as? FavouriteTableViewCell
         
     
-        return cell
+        return cell ?? UITableViewCell()
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        caterNames.count
+        categoryNames.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "item", for: indexPath) as! CategoryCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "item", for: indexPath) as? CategoryCollectionViewCell
         
-        cell.catergoryName.text = caterNames[indexPath.row]
-        cell.catergoryImage.image = UIImage(named: caterNames[indexPath.row])
+        cell?.catergoryName.text = categoryNames[indexPath.row]
+        cell?.catergoryImage.image = UIImage(named: categoryNames[indexPath.row])
     
-        return cell
+        return cell ?? UICollectionViewCell()
     }
     
     

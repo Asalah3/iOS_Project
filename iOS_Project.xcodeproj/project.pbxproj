@@ -17,6 +17,7 @@
 		C97B639C2A1FBEE8005D11AD /* iOS_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97B639B2A1FBEE8005D11AD /* iOS_ProjectTests.swift */; };
 		C97B63A62A1FBEE8005D11AD /* iOS_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97B63A52A1FBEE8005D11AD /* iOS_ProjectUITests.swift */; };
 		C97B63A82A1FBEE8005D11AD /* iOS_ProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97B63A72A1FBEE8005D11AD /* iOS_ProjectUITestsLaunchTests.swift */; };
+		CF7795D02A2039EF004C50B3 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7795CF2A2039EF004C50B3 /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		C97B63A12A1FBEE8005D11AD /* iOS_ProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_ProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C97B63A52A1FBEE8005D11AD /* iOS_ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_ProjectUITests.swift; sourceTree = "<group>"; };
 		C97B63A72A1FBEE8005D11AD /* iOS_ProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_ProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CF7795CF2A2039EF004C50B3 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		C97B63802A1FBEE4005D11AD /* iOS_Project */ = {
 			isa = PBXGroup;
 			children = (
+				CF7795CE2A2039D2004C50B3 /* Utilities */,
 				C97B63812A1FBEE4005D11AD /* AppDelegate.swift */,
 				C97B63832A1FBEE4005D11AD /* SceneDelegate.swift */,
 				C97B63852A1FBEE4005D11AD /* ViewController.swift */,
@@ -128,6 +131,14 @@
 				C97B63A72A1FBEE8005D11AD /* iOS_ProjectUITestsLaunchTests.swift */,
 			);
 			path = iOS_ProjectUITests;
+			sourceTree = "<group>";
+		};
+		CF7795CE2A2039D2004C50B3 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CF7795CF2A2039EF004C50B3 /* Utilities.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +275,7 @@
 				C97B63862A1FBEE4005D11AD /* ViewController.swift in Sources */,
 				C97B638C2A1FBEE4005D11AD /* iOS_Project.xcdatamodeld in Sources */,
 				C97B63822A1FBEE4005D11AD /* AppDelegate.swift in Sources */,
+				CF7795D02A2039EF004C50B3 /* Utilities.swift in Sources */,
 				C97B63842A1FBEE4005D11AD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

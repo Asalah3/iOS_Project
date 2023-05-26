@@ -37,6 +37,7 @@ class HomeViewController: UIViewController , UITableViewDelegate,UITableViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "item", for: indexPath) as? CategoryCollectionViewCell
         
+        cell?.setUpCell()
         cell?.catergoryName.text = categoryNames[indexPath.row]
         cell?.catergoryImage.image = UIImage(named: categoryNames[indexPath.row])
     

@@ -16,6 +16,7 @@ class FavouriteTableViewCell: UITableViewCell {
     @IBOutlet weak var chiefName: UILabel!
     @IBOutlet weak var categoryName: UILabel!
     @IBOutlet weak var grediantView: UIView!
+    var id : Int = 0
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -32,5 +33,9 @@ class FavouriteTableViewCell: UITableViewCell {
         ingredientImage.layer.cornerRadius = 25
     }
 
-    @IBOutlet weak var addToFavourite: UIImageView!
+    @IBAction func addFavouriteButton(_ sender: UIButton) {
+//        FavouriteItems.favouriteItems.checkIfInserted(favouriteId: id)
+    }
+    
+ 
 }

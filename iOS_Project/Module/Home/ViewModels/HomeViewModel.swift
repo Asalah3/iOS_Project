@@ -6,7 +6,19 @@
 //
 
 import Foundation
-class HomeViewModel{
+
+protocol HomeViewModelProtocol{
+    func fetchHomeData(tag :String)
+}
+
+
+class HomeViewModel :HomeViewModelProtocol {
+    var remote :NetworkServices = NetworkServices()
+    
+    init( remoteDataSource: NetworkServices){
+       
+       remote = remoteDataSource
+    }
     
     var fetchCategoriesDataToHomeViewController : (()->())={}
     
@@ -17,7 +29,7 @@ class HomeViewModel{
     }
     
     func fetchHomeData(tag :String){
-        NetworkServices.fetchHomeCategoriesData(tag:tag) { res in
+        remote.fetchHomeCategoriesData(tag:tag) { res in
             guard let result = res else {return}
             self.fetchHomeData = result
             

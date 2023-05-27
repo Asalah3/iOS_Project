@@ -7,11 +7,11 @@
 
 import Foundation
 protocol NetworkServicesProtocol {
-    static func fetchHomeCategoriesData(tag: String,compilitionHandler : @escaping (Categories?)-> Void)
+     func fetchHomeCategoriesData(tag: String,compilitionHandler : @escaping (Categories?)-> Void)
     
 }
 class NetworkServices : NetworkServicesProtocol{
-    static func fetchHomeCategoriesData(tag: String, compilitionHandler: @escaping (Categories?) -> Void) {
+     func fetchHomeCategoriesData(tag: String, compilitionHandler: @escaping (Categories?) -> Void) {
         let url = URL(string: "https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=\(tag)")
     
         

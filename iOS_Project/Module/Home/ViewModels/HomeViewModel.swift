@@ -8,16 +8,20 @@
 import Foundation
 
 protocol HomeViewModelProtocol{
+    var localDataSource: LocalDataSourceProtocol { get }
     func fetchHomeData(tag :String)
 }
 
 
 class HomeViewModel :HomeViewModelProtocol {
-    var remote :NetworkServices = NetworkServices()
+ 
+    var remote :NetworkServices?
+    var localDataSource: LocalDataSourceProtocol
     
-    init( remoteDataSource: NetworkServices){
-       
-       remote = remoteDataSource
+    init( remoteDataSource: NetworkServices, localDataSource: LocalDataSourceProtocol) {
+        self.remote = remoteDataSource
+        self.localDataSource = localDataSource
+        
     }
     
     var fetchCategoriesDataToHomeViewController : (()->())={}
@@ -29,12 +33,13 @@ class HomeViewModel :HomeViewModelProtocol {
     }
     
     func fetchHomeData(tag :String){
-        remote.fetchHomeCategoriesData(tag:tag) { res in
+        remote?.fetchHomeCategoriesData(tag:tag) { res in
             guard let result = res else {return}
             self.fetchHomeData = result
             
             
         }
     }
+    
 }
     

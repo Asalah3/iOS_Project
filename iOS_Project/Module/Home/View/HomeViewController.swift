@@ -69,7 +69,7 @@ class HomeViewController: UIViewController , UITableViewDelegate,UITableViewData
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedCategory = categoryNames[indexPath.row]
-        fetchingData()
+        fetchingData(category: selectedCategory)
         catergoryMeals.reloadData()
         categoryCollection.reloadData()
         
@@ -104,35 +104,34 @@ class HomeViewController: UIViewController , UITableViewDelegate,UITableViewData
         }
     }
     
-    func fetchingData(){
-        switch selectedCategory{
+    func fetchingData(category: String){
+        switch category{
             case "Popular":
-                homeViewModel?.fetchHomeData(tag: "middle_eastern")
-                homeViewModel?.fetchCategoriesDataToHomeViewController = {() in self.renderView()}
-
+                callHomeViewModel(tag:"middle_eastern")
+                
             case "Breakfast":
-                homeViewModel?.fetchHomeData(tag: "breakfast")
-                homeViewModel?.fetchCategoriesDataToHomeViewController = {() in self.renderView()}
+                callHomeViewModel(tag:"breakfast")
 
             case "Lunch":
-                homeViewModel?.fetchHomeData(tag: "lunch")
-                homeViewModel?.fetchCategoriesDataToHomeViewController = {() in self.renderView()}
-
+                callHomeViewModel(tag:"lunch")
+                
             case "Dinner":
-                homeViewModel?.fetchHomeData(tag: "dinner")
-                homeViewModel?.fetchCategoriesDataToHomeViewController = {() in self.renderView()}
-
+                callHomeViewModel(tag:"dinner" )
+                
             case "Dessert":
-                homeViewModel?.fetchHomeData(tag: "desserts")
-                homeViewModel?.fetchCategoriesDataToHomeViewController = {() in self.renderView()}
-
+                callHomeViewModel(tag: "desserts")
+                
             default:
-                homeViewModel?.fetchHomeData(tag: "middle_eastern")
-                homeViewModel?.fetchCategoriesDataToHomeViewController = {() in self.renderView()}
+                callHomeViewModel(tag: "middle_eastern")
+                
 
 
             
         }
+    }
+    func callHomeViewModel(tag: String){
+        homeViewModel?.fetchHomeData(tag: tag)
+        homeViewModel?.fetchCategoriesDataToHomeViewController = {() in self.renderView()}
     }
     
     

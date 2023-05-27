@@ -15,7 +15,9 @@ class HomeViewController: UIViewController , UITableViewDelegate,UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Food Recipies"
-        
+        NetworkServices.fetchHomeData(tag: "breakfast"){ (result) in
+            
+        }
 
         
     }

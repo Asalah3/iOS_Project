@@ -6,6 +6,7 @@ target 'iOS_Project' do
   use_frameworks!
 	pod 'SDWebImage', '~> 5.0'
 	pod 'lottie-ios'
+  pod 'Alamofire'
 
 
   # Pods for iOS_Project

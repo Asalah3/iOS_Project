@@ -47,7 +47,7 @@ class FavouriteTableViewCell: UITableViewCell {
             let homeViewModel = homeViewModel, homeViewModel.localDataSource.checkIfInserted(favouriteId:favID){
             favButtonColor.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         } else {
-            favButtonColor.tintColor = UIColor.white
+            favButtonColor.setImage(UIImage(systemName: "heart"), for: .normal)
             
         }
         var categoryImage : String = ""

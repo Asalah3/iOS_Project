@@ -22,12 +22,11 @@ class FavouriteTableViewCell: UITableViewCell {
     var id : Int = 0
     var favObject : Result?
     var homeViewModel: HomeViewModelProtocol?
-    var favouriteViewModel: FavouriteViewModelProtocol?
+//    var favouriteViewModel: FavouriteViewModelProtocol?
 
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -37,17 +36,15 @@ class FavouriteTableViewCell: UITableViewCell {
         self.homeViewModel = homeViewModel
         
     }
-    func setFavouriteVieWModel(favouriteViewModel: FavouriteViewModelProtocol) {
-        self.favouriteViewModel = favouriteViewModel
-        
-    }
+//    func setFavouriteVieWModel(favouriteViewModel: FavouriteViewModelProtocol) {
+//        self.favouriteViewModel = favouriteViewModel
+//
+//    }
     
     func SetCellValues(catergory: Result){
         favObject = catergory
         if let favID = favObject?.id,
             let homeViewModel = homeViewModel, homeViewModel.localDataSource.checkIfInserted(favouriteId:favID){
-            
-//            favButtonColor.tintColor = UIColor.red
             favButtonColor.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         } else {
             favButtonColor.tintColor = UIColor.white
@@ -69,15 +66,12 @@ class FavouriteTableViewCell: UITableViewCell {
     }
     func SetCellValuesForFavourite(favouriteItem: NSManagedObject){
         if let favID = favouriteItem.value(forKey: "favouriteId") as? Int,
-            let favouriteViewModel = favouriteViewModel, favouriteViewModel.isExist(favouriteId:favID){
-            
+           let favouriteViewModel = homeViewModel, ((homeViewModel?.localDataSource.checkIfInserted(favouriteId:favID)) != nil){
             favButtonColor.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         } else {
             favButtonColor.tintColor = UIColor.white
-            
         }
         let image : String = favouriteItem.value(forKey: "favouriteImage") as? String ?? ""
-        
         ingredientImage.sd_setImage(with: URL(string: image), placeholderImage: UIImage(named: ""))
         ingredientName.text = favouriteItem.value(forKey: "favouriteName") as? String
         ingredientName.text = favouriteItem.value(forKey: "favouriteId") as? String
@@ -85,7 +79,6 @@ class FavouriteTableViewCell: UITableViewCell {
         categoryName.text = favouriteItem.value(forKey: "favouriteMealType") as? String
         numServings.text = favouriteItem.value(forKey: "favouriteServings") as? String
         layer.cornerRadius = 25
-
     }
     
     func setUpCell(){
@@ -95,22 +88,14 @@ class FavouriteTableViewCell: UITableViewCell {
     }
 
     @IBAction func addFavouriteButton(_ sender: UIButton) {
-        print("id\(favObject?.id)")
-        
         if let homeViewModel = homeViewModel,
            homeViewModel.localDataSource.checkIfInserted(favouriteId: favObject?.id ?? 0){
             favButtonColor.tintColor = UIColor.white
             homeViewModel.localDataSource.deleteItemById(favouriteId: favObject?.id ?? 0)
-
-            
         } else {
-            favButtonColor.tintColor = UIColor.red
+            favButtonColor.setImage(UIImage(systemName: "heart.fill"), for: .normal)
             homeViewModel?.localDataSource.InsertItem(favouriteName: favObject?.name ?? "", favouriteId: favObject?.id ?? 0, favouriteImage: favObject?.thumbnailURL ?? "", favouriteMealCheif: favObject?.description ?? "", favouriteMealType: favObject?.slug ?? "", favouriteServings: String(favObject?.numServings ?? 0))
         }
         homeViewModel?.fetchHomeData(tag: "lunch")
-        
-        print("fav clicked")
     }
-    
- 
 }

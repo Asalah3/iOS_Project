@@ -10,6 +10,8 @@
 		1C67AB92D3B6C44E88989DFA /* Pods_iOS_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5A04FA24A85C70D0A5A0402 /* Pods_iOS_Project.framework */; };
 		AD030DB2C3AE46D76BA2DEAF /* Pods_iOS_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E990BFB88AAE37460C392E9 /* Pods_iOS_ProjectTests.framework */; };
 		BEEDC09E4DABFEEA029729F7 /* Pods_iOS_Project_iOS_ProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0312777D4C237B2A4AA5D833 /* Pods_iOS_Project_iOS_ProjectUITests.framework */; };
+		C965A1882A214BF800DF98E1 /* FavouriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C965A1872A214BF800DF98E1 /* FavouriteViewModel.swift */; };
+		C965A18A2A2150C700DF98E1 /* TestCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C965A1892A2150C700DF98E1 /* TestCoreData.swift */; };
 		C97B63822A1FBEE4005D11AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97B63812A1FBEE4005D11AD /* AppDelegate.swift */; };
 		C97B63842A1FBEE4005D11AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97B63832A1FBEE4005D11AD /* SceneDelegate.swift */; };
 		C97B63862A1FBEE4005D11AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97B63852A1FBEE4005D11AD /* ViewController.swift */; };
@@ -28,12 +30,12 @@
 		C9BB22692A1F453F00C73954 /* DetailsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9BB22682A1F453F00C73954 /* DetailsStoryboard.storyboard */; };
 		C9BB226C2A1F5DA100C73954 /* FavouriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BB226B2A1F5DA100C73954 /* FavouriteTableViewCell.swift */; };
 		C9BB226E2A1F72B000C73954 /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BB226D2A1F72B000C73954 /* LocalDataSource.swift */; };
-		C9BBA37E2ADB2016721B9D4F /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		C9BBA37E2ADB2016721B9D4F /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		CF40F30A2A20C2D200597260 /* CategoryCollectionViewCelll.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF40F3092A20C2D200597260 /* CategoryCollectionViewCelll.swift */; };
 		CF40F30C2A20C3D900597260 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF40F30B2A20C3D900597260 /* GradientView.swift */; };
 		CF7795D02A2039EF004C50B3 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7795CF2A2039EF004C50B3 /* Utilities.swift */; };
-		CF8557AB2A20A3460019137E /* BuildFile in Sources */ = {isa = PBXBuildFile; };
-		CF8557B52A20AEB60019137E /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		CF8557AB2A20A3460019137E /* (null) in Sources */ = {isa = PBXBuildFile; };
+		CF8557B52A20AEB60019137E /* (null) in Sources */ = {isa = PBXBuildFile; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		6699A017DB7CBAB8B9835E6B /* Pods-iOS_Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Project.debug.xcconfig"; path = "Target Support Files/Pods-iOS_Project/Pods-iOS_Project.debug.xcconfig"; sourceTree = "<group>"; };
 		6E990BFB88AAE37460C392E9 /* Pods_iOS_ProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_ProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8354C43447E4D8A447029F02 /* Pods-iOS_ProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_ProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-iOS_ProjectTests/Pods-iOS_ProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C965A1872A214BF800DF98E1 /* FavouriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewModel.swift; sourceTree = "<group>"; };
+		C965A1892A2150C700DF98E1 /* TestCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoreData.swift; sourceTree = "<group>"; };
 		C97B637E2A1FBEE4005D11AD /* iOS_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C97B63812A1FBEE4005D11AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C97B63832A1FBEE4005D11AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,7 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9BBA37E2ADB2016721B9D4F /* BuildFile in Frameworks */,
+				C9BBA37E2ADB2016721B9D4F /* (null) in Frameworks */,
 				1C67AB92D3B6C44E88989DFA /* Pods_iOS_Project.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -185,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				C97B639B2A1FBEE8005D11AD /* iOS_ProjectTests.swift */,
+				C965A1892A2150C700DF98E1 /* TestCoreData.swift */,
 			);
 			path = iOS_ProjectTests;
 			sourceTree = "<group>";
@@ -231,6 +236,7 @@
 				C9BB22602A1F44D400C73954 /* FavouriteStoryboard.storyboard */,
 				C9BB22622A1F44E900C73954 /* FavouriteViewController.swift */,
 				C9BB226B2A1F5DA100C73954 /* FavouriteTableViewCell.swift */,
+				C965A1872A214BF800DF98E1 /* FavouriteViewModel.swift */,
 			);
 			path = Favourite;
 			sourceTree = "<group>";
@@ -522,9 +528,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9BB226E2A1F72B000C73954 /* LocalDataSource.swift in Sources */,
-				CF8557AB2A20A3460019137E /* BuildFile in Sources */,
+				CF8557AB2A20A3460019137E /* (null) in Sources */,
 				C97B63862A1FBEE4005D11AD /* ViewController.swift in Sources */,
-				CF8557B52A20AEB60019137E /* BuildFile in Sources */,
+				CF8557B52A20AEB60019137E /* (null) in Sources */,
 				C9BB226C2A1F5DA100C73954 /* FavouriteTableViewCell.swift in Sources */,
 				CF40F30A2A20C2D200597260 /* CategoryCollectionViewCelll.swift in Sources */,
 				C97B638C2A1FBEE4005D11AD /* iOS_Project.xcdatamodeld in Sources */,
@@ -532,6 +538,7 @@
 				C9BB22662A1F450D00C73954 /* DetailsViewController.swift in Sources */,
 				CF7795D02A2039EF004C50B3 /* Utilities.swift in Sources */,
 				C9BB22632A1F44E900C73954 /* FavouriteViewController.swift in Sources */,
+				C965A1882A214BF800DF98E1 /* FavouriteViewModel.swift in Sources */,
 				CF40F30C2A20C3D900597260 /* GradientView.swift in Sources */,
 				C97B63842A1FBEE4005D11AD /* SceneDelegate.swift in Sources */,
 				C9BB225C2A1F44A400C73954 /* HomeViewController.swift in Sources */,
@@ -542,6 +549,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C965A18A2A2150C700DF98E1 /* TestCoreData.swift in Sources */,
 				C97B639C2A1FBEE8005D11AD /* iOS_ProjectTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,12 +8,19 @@
 import Foundation
 import UIKit
 import CoreData
-class FavouriteItems{
+
+protocol FavouriteProtocol{
+    func fetchFavouriteItems() -> [NSManagedObject]
+    func InsertItem(favouriteName : String , favouriteId : Int , favouriteImage : String, favouriteMealCheif: String ,favouriteMealType: String,favouriteServings: String)
+    func deleteItem(favouriteItem : NSManagedObject)
+    func deleteItemById(favouriteId : Int)
+    func checkIfInserted(favouriteId : Int) -> Bool
+}
+class FavouriteItems: FavouriteProtocol{
     var context : NSManagedObjectContext?
     var entity : NSEntityDescription?
-    static var favouriteItems = FavouriteItems()
     
-    private init() {
+     init() {
         let appDelegate = UIApplication.shared.delegate as? AppDelegate
         context = appDelegate?.persistentContainer.viewContext
         entity = NSEntityDescription.entity(forEntityName: "FavouriteItem", in: context!)
@@ -47,7 +54,7 @@ class FavouriteItems{
     func deleteItemById(favouriteId : Int){
         var favouriteItem : NSManagedObject?
         var favouritesList : [NSManagedObject]?
-        favouritesList = FavouriteItems.favouriteItems.fetchFavouriteItems()
+        favouritesList = fetchFavouriteItems()
         favouritesList?.forEach{ data in
             let favId = data.value(forKey: "favouriteId") as? Int
             if favId == favouriteId{
@@ -85,7 +92,7 @@ class FavouriteItems{
     func checkIfInserted(favouriteId : Int) -> Bool {
         var result = false
         var favouritesList : [NSManagedObject]?
-        favouritesList = FavouriteItems.favouriteItems.fetchFavouriteItems()
+        favouritesList = fetchFavouriteItems()
         favouritesList?.forEach{ data in
             let favId = data.value(forKey: "favouriteId") as? Int
             if favId == favouriteId{

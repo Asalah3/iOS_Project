@@ -27,7 +27,8 @@ class HomeViewController: UIViewController , UITableViewDelegate,UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavouriteTableViewCell", for: indexPath) as? FavouriteTableViewCell
         
-    
+        cell?.layer.cornerRadius = 25
+
         return cell ?? UITableViewCell()
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -40,10 +41,12 @@ class HomeViewController: UIViewController , UITableViewDelegate,UITableViewData
         cell?.setUpCell()
         cell?.catergoryName.text = categoryNames[indexPath.row]
         cell?.catergoryImage.image = UIImage(named: categoryNames[indexPath.row])
-    
+
         return cell ?? UICollectionViewCell()
     }
     
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 180
+    }
 
 }

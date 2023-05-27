@@ -21,7 +21,7 @@ class NetworkServices : NetworkServicesProtocol{
         }
         var request = URLRequest(url: newUrl)
         request.allHTTPHeaderFields = ["X-RapidAPI-Host":"tasty.p.rapidapi.com",
-                                       "X-RapidAPI-Key":"d67902112amshdb94118d744b893p18293bjsn4d056e614259"]
+                                       "X-RapidAPI-Key":"edbcf0896dmsh5514fb8536977c7p1b9dd6jsn19b1cc27fd71"]
 
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: request){ data,response , error in
@@ -47,7 +47,7 @@ class NetworkServices : NetworkServicesProtocol{
        }
        var request = URLRequest(url: newUrl)
        request.allHTTPHeaderFields = ["X-RapidAPI-Host":"tasty.p.rapidapi.com",
-                                      "X-RapidAPI-Key":"d67902112amshdb94118d744b893p18293bjsn4d056e614259"]
+                                      "X-RapidAPI-Key":"edbcf0896dmsh5514fb8536977c7p1b9dd6jsn19b1cc27fd71"]
        
        let session = URLSession(configuration: .default)
        let task = session.dataTask(with: request){ data,response , error in
@@ -72,7 +72,7 @@ class NetworkServices : NetworkServicesProtocol{
        }
        var request = URLRequest(url: newUrl)
        request.allHTTPHeaderFields = ["X-RapidAPI-Host":"tasty.p.rapidapi.com",
-                                      "X-RapidAPI-Key":"d67902112amshdb94118d744b893p18293bjsn4d056e614259"]
+                                      "X-RapidAPI-Key":"edbcf0896dmsh5514fb8536977c7p1b9dd6jsn19b1cc27fd71"]
        let session = URLSession(configuration: .default)
        let task = session.dataTask(with: request){ data,response , error in
            do{

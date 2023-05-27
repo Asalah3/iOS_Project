@@ -19,11 +19,7 @@ final class iOS_ProjectTests: XCTestCase {
     }
 
     func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+        
     }
 
     func testPerformanceExample() throws {
@@ -31,6 +27,19 @@ final class iOS_ProjectTests: XCTestCase {
         self.measure {
             // Put the code you want to measure the time of here.
         }
+    }
+    func testLoadCategoriesFromURL(){
+        let expectation = expectation(description: "Waiting for the API Data")
+        NetworkServices.fetchHomeCategoriesData(tag: "dinner"){ result in
+            guard let result = result else{
+                XCTFail()
+                expectation.fulfill()
+                return
+            }
+            XCTAssertNotEqual(result.results?.count,0, "Failed ..")
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 5)
     }
 
 }

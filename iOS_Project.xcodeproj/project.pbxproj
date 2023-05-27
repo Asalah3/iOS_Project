@@ -28,12 +28,15 @@
 		C9BB22692A1F453F00C73954 /* DetailsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9BB22682A1F453F00C73954 /* DetailsStoryboard.storyboard */; };
 		C9BB226C2A1F5DA100C73954 /* FavouriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BB226B2A1F5DA100C73954 /* FavouriteTableViewCell.swift */; };
 		C9BB226E2A1F72B000C73954 /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BB226D2A1F72B000C73954 /* LocalDataSource.swift */; };
-		C9BBA37E2ADB2016721B9D4F /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		C9BBA37E2ADB2016721B9D4F /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		CF40F30A2A20C2D200597260 /* CategoryCollectionViewCelll.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF40F3092A20C2D200597260 /* CategoryCollectionViewCelll.swift */; };
 		CF40F30C2A20C3D900597260 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF40F30B2A20C3D900597260 /* GradientView.swift */; };
 		CF7795D02A2039EF004C50B3 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7795CF2A2039EF004C50B3 /* Utilities.swift */; };
-		CF8557AB2A20A3460019137E /* BuildFile in Sources */ = {isa = PBXBuildFile; };
-		CF8557B52A20AEB60019137E /* BuildFile in Sources */ = {isa = PBXBuildFile; };
+		CF8557AB2A20A3460019137E /* (null) in Sources */ = {isa = PBXBuildFile; };
+		CF8557B52A20AEB60019137E /* (null) in Sources */ = {isa = PBXBuildFile; };
+		CF89936A2A21499C0027E45A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8993692A21499C0027E45A /* HomeViewModel.swift */; };
+		CF89936C2A2149AF0027E45A /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF89936B2A2149AF0027E45A /* ResponseModel.swift */; };
+		CF89936E2A2149BB0027E45A /* NetWorkServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF89936D2A2149BB0027E45A /* NetWorkServices.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +89,9 @@
 		CF40F3092A20C2D200597260 /* CategoryCollectionViewCelll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCelll.swift; sourceTree = "<group>"; };
 		CF40F30B2A20C3D900597260 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		CF7795CF2A2039EF004C50B3 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		CF8993692A21499C0027E45A /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewModel.swift; path = ../../../../../../Downloads/HomeViewModel.swift; sourceTree = "<group>"; };
+		CF89936B2A2149AF0027E45A /* ResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResponseModel.swift; path = ../../../../Downloads/ResponseModel.swift; sourceTree = "<group>"; };
+		CF89936D2A2149BB0027E45A /* NetWorkServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetWorkServices.swift; path = ../../../../Downloads/NetWorkServices.swift; sourceTree = "<group>"; };
 		F5A04FA24A85C70D0A5A0402 /* Pods_iOS_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA94E930C307E655779DB15 /* Pods-iOS_Project-iOS_ProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Project-iOS_ProjectUITests.debug.xcconfig"; path = "Target Support Files/Pods-iOS_Project-iOS_ProjectUITests/Pods-iOS_Project-iOS_ProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,7 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9BBA37E2ADB2016721B9D4F /* BuildFile in Frameworks */,
+				C9BBA37E2ADB2016721B9D4F /* (null) in Frameworks */,
 				1C67AB92D3B6C44E88989DFA /* Pods_iOS_Project.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,6 +218,7 @@
 		C9BB22592A1F444200C73954 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CF89936B2A2149AF0027E45A /* ResponseModel.swift */,
 				C9BB226D2A1F72B000C73954 /* LocalDataSource.swift */,
 			);
 			path = Models;
@@ -247,6 +254,7 @@
 		C9BB226A2A1F482600C73954 /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
+				CF89936D2A2149BB0027E45A /* NetWorkServices.swift */,
 			);
 			path = NetworkLayer;
 			sourceTree = "<group>";
@@ -263,6 +271,7 @@
 		CF8557A92A20A3030019137E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CF8993692A21499C0027E45A /* HomeViewModel.swift */,
 				C9BB225D2A1F44AF00C73954 /* HomeStoryboard.storyboard */,
 				C9BB225B2A1F44A400C73954 /* HomeViewController.swift */,
 				CF40F3092A20C2D200597260 /* CategoryCollectionViewCelll.swift */,
@@ -522,9 +531,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9BB226E2A1F72B000C73954 /* LocalDataSource.swift in Sources */,
-				CF8557AB2A20A3460019137E /* BuildFile in Sources */,
+				CF8557AB2A20A3460019137E /* (null) in Sources */,
 				C97B63862A1FBEE4005D11AD /* ViewController.swift in Sources */,
-				CF8557B52A20AEB60019137E /* BuildFile in Sources */,
+				CF8557B52A20AEB60019137E /* (null) in Sources */,
 				C9BB226C2A1F5DA100C73954 /* FavouriteTableViewCell.swift in Sources */,
 				CF40F30A2A20C2D200597260 /* CategoryCollectionViewCelll.swift in Sources */,
 				C97B638C2A1FBEE4005D11AD /* iOS_Project.xcdatamodeld in Sources */,
@@ -533,7 +542,10 @@
 				CF7795D02A2039EF004C50B3 /* Utilities.swift in Sources */,
 				C9BB22632A1F44E900C73954 /* FavouriteViewController.swift in Sources */,
 				CF40F30C2A20C3D900597260 /* GradientView.swift in Sources */,
+				CF89936E2A2149BB0027E45A /* NetWorkServices.swift in Sources */,
 				C97B63842A1FBEE4005D11AD /* SceneDelegate.swift in Sources */,
+				CF89936A2A21499C0027E45A /* HomeViewModel.swift in Sources */,
+				CF89936C2A2149AF0027E45A /* ResponseModel.swift in Sources */,
 				C9BB225C2A1F44A400C73954 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

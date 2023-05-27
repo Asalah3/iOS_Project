@@ -36,13 +36,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QIz-Ps-jI0" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" id="SKH-ss-ofQ">
-                        <imageReference key="image" image="homekit" catalog="system" renderingMode="hierarchical">
-                            <hierarchicalColors>
-                                <color systemColor="systemOrangeColor"/>
-                                <color systemColor="systemOrangeColor"/>
-                                <color systemColor="systemOrangeColor"/>
-                            </hierarchicalColors>
-                        </imageReference>
+                        <imageReference key="image" image="homekit" catalog="system"/>
                         <color key="badgeColor" systemColor="systemOrangeColor"/>
                     </tabBarItem>
                     <toolbarItems/>

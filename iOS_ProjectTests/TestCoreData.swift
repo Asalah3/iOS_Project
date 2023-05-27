@@ -9,9 +9,9 @@ import XCTest
 @testable import iOS_Project
 final class TestCoreData: XCTestCase {
 
-    var favouriteItems: FavouriteProtocol?
+    var favouriteItems: LocalDataSourceProtocol?
     override func setUp()  {
-        favouriteItems = FavouriteItems()
+        favouriteItems = LocalDataSource()
     }
 
     override func tearDown()  {

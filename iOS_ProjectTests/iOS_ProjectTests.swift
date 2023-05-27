@@ -44,4 +44,30 @@ final class iOS_ProjectTests: XCTestCase {
         waitForExpectations(timeout: 5)
     }
 
+    func testfetchSimilaritiesRecipe(){
+        let expectation = expectation(description: "Waiting for the API Data")
+        networkService?.fetchSimilaritiesRecipe(receipeId: 8138){ result in
+            guard let result = result else{
+                XCTFail()
+                expectation.fulfill()
+                return
+            }
+            XCTAssertNotEqual(result.results?.first?.id,nil,"Failed")
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 5)
+    }
+    func testfetchReceipeDetails(){
+        let expectation = expectation(description: "Waiting for the API Data")
+        networkService?.fetchReceipeDetails(receipeId: 8138){ result in
+            guard let result = result else{
+                XCTFail()
+                expectation.fulfill()
+                return
+            }
+            XCTAssertNotEqual(result.id,nil,"Failed")
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: 5)
+    }
 }

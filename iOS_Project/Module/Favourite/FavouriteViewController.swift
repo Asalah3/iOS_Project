@@ -45,11 +45,10 @@ extension FavouriteViewController : UITableViewDelegate , UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavouriteTableViewCell") as? FavouriteTableViewCell
         cell?.setUpCell()
         cell?.layer.cornerRadius = 25
-        let favouriteItem = favouritesList?[indexPath.row]
-        cell?.ingredientName.text = favouriteItem?.value(forKey: "favouriteName") as? String
-        cell?.chiefName.text = favouriteItem?.value(forKey: "favouriteMealCheif") as? String
-        cell?.categoryName.text = favouriteItem?.value(forKey: "favouriteMealType") as? String
-        cell?.numServings.text = favouriteItem?.value(forKey: "favouriteServings") as? String
+        let favouriteItem = (favouritesList?[indexPath.row])!
+        let homeViewModel = HomeViewModel(remoteDataSource: NetworkServices() , localDataSource: LocalDataSource())
+        cell?.setVieModel(homeViewModel: homeViewModel)
+        cell?.SetCellValuesForFavourite(favouriteItem: favouriteItem)
         return cell ?? UITableViewCell()
     }
     
@@ -63,9 +62,13 @@ extension FavouriteViewController : UITableViewDelegate , UITableViewDataSource{
             let alert : UIAlertController = UIAlertController(title: "Warnning", message: "Do You Want To Delete \(favouriteName)", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Delete", style: .destructive , handler: { action in
                 self.favouriteViewModel?.deleteFavouriteItem(favouriteItem: favouriteItem!)
-                self.favouriteViewModel?.getFavouritesResult()
                 self.favouritesList?.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
+                if self.favouritesList?.count == 0{
+                    self.noRecipesYetImage.isHidden = false
+                    self.favouriteTableView.isHidden = true
+                    self.favouriteTableView.reloadData()
+                }
                 self.favouriteTableView.reloadData()
             }))
             alert.addAction(UIAlertAction(title: "Cancel", style: .default , handler: nil))

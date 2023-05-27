@@ -145,6 +145,7 @@
                                         <connections>
                                             <outlet property="categoryName" destination="Ibf-zi-cLc" id="fef-4K-5um"/>
                                             <outlet property="chiefName" destination="m6d-XK-PpD" id="bXL-ec-O07"/>
+                                            <outlet property="favButtonColor" destination="vz7-51-GDh" id="Mar-Yx-GUO"/>
                                             <outlet property="grediantView" destination="jSS-pV-uXO" id="KaU-W0-Gsm"/>
                                             <outlet property="ingredientImage" destination="Us2-BN-Tgn" id="W7J-md-avD"/>
                                             <outlet property="ingredientName" destination="IiP-20-daw" id="yzR-cb-zD8"/>

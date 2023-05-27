@@ -23,7 +23,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Picture" translatesAutoresizingMaskIntoConstraints="NO" id="gi2-EI-RRx">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <rect key="frame" x="0.0" y="-7" width="393" height="859"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Easy To Make Food" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubX-cZ-3mO">
                                 <rect key="frame" x="89.000000000000014" y="436.33333333333331" width="213.33333333333337" height="30.666666666666686"/>
@@ -42,7 +42,7 @@
                             <constraint firstItem="ubX-cZ-3mO" firstAttribute="top" secondItem="Hqe-Tv-oZy" secondAttribute="bottom" constant="42" id="FOx-eD-Hvt"/>
                             <constraint firstAttribute="bottom" secondItem="gi2-EI-RRx" secondAttribute="bottom" id="aRM-QV-SLX"/>
                             <constraint firstItem="ubX-cZ-3mO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="89" id="dkv-aI-buD"/>
-                            <constraint firstItem="gi2-EI-RRx" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="ers-OP-oOs"/>
+                            <constraint firstItem="gi2-EI-RRx" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" constant="-7" id="ers-OP-oOs"/>
                             <constraint firstItem="Hqe-Tv-oZy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="175" id="xNC-hA-3xZ"/>
                         </constraints>
                     </view>

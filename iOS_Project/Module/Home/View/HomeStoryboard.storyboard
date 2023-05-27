@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -207,6 +208,7 @@
                                         <connections>
                                             <outlet property="categoryName" destination="h1k-4G-lu2" id="gdP-DU-EcK"/>
                                             <outlet property="chiefName" destination="fhB-xr-vfN" id="sCc-RD-yqK"/>
+                                            <outlet property="favButtonColor" destination="5wt-Ks-U0b" id="cJc-37-RQS"/>
                                             <outlet property="grediantView" destination="ge7-y3-6i3" id="3wu-kH-WX0"/>
                                             <outlet property="ingredientImage" destination="TDZ-jc-27o" id="HCE-5O-sVX"/>
                                             <outlet property="ingredientName" destination="6LD-zt-bLz" id="TQv-mU-rmX"/>
@@ -220,13 +222,26 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="Fdi-hV-tNH"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3Q-Ye-a9w">
+                                <rect key="frame" x="175" y="415" width="62" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="H3Q-Ye-a9w" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="356" id="PL7-lt-1cX"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="H3Q-Ye-a9w" secondAttribute="bottom" constant="371" id="Ub5-U1-qBE"/>
+                            <constraint firstItem="H3Q-Ye-a9w" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="175" id="XeA-Bq-P0n"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="H3Q-Ye-a9w" secondAttribute="trailing" constant="156" id="hJu-de-hhE"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="categoryCollection" destination="sGy-F0-2zE" id="1Pv-Th-NJ0"/>
                         <outlet property="catergoryMeals" destination="KdI-A8-d62" id="fw4-JU-F11"/>
+                        <outlet property="noResultLabel" destination="H3Q-Ye-a9w" id="swP-zP-eEA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -236,7 +251,7 @@
     </scenes>
     <color key="tintColor" systemColor="systemOrangeColor"/>
     <resources>
-        <image name="fork-and-knife-with-plate" width="16" height="17"/>
+        <image name="fork-and-knife-with-plate" width="266" height="238"/>
         <image name="fork.knife" catalog="system" width="94" height="128"/>
         <image name="heart" catalog="system" width="128" height="107"/>
         <image name="image" width="720" height="720"/>

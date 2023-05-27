@@ -8,8 +8,8 @@
 import Foundation
 import CoreData
 class FavouriteViewModel : FavouriteViewModelProtocol{
-    var localDataSource:FavouriteProtocol?
-    init(localDataSource: FavouriteProtocol) {
+    var localDataSource: LocalDataSourceProtocol?
+    init(localDataSource: LocalDataSourceProtocol) {
         self.localDataSource = localDataSource
     }
     func getFavouritesResult() -> [NSManagedObject]{

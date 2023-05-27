@@ -10,14 +10,13 @@ import CoreData
 
 class FavouriteViewController: UIViewController {
 
-    var favouriteViewModel: FavouriteViewModel?
+    var favouriteViewModel: FavouriteViewModelProtocol?
     var favouritesList : [NSManagedObject]?
     @IBOutlet weak var favouriteTableView: UITableView!
     @IBOutlet weak var noRecipesYetImage: UIImageView!
     override func viewWillAppear(_ animated: Bool) {
-        favouriteViewModel = FavouriteViewModel()
-        favouriteViewModel?.getFavouritesResult()
-        favouritesList = favouriteViewModel?.Result
+        favouriteViewModel = FavouriteViewModel(localDataSource: FavouriteItems())
+        favouritesList = favouriteViewModel?.getFavouritesResult()
         if favouritesList?.count == 0{
             favouriteTableView.isHidden = true
             noRecipesYetImage.isHidden = false

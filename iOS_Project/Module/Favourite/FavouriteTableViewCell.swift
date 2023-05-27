@@ -34,7 +34,7 @@ class FavouriteTableViewCell: UITableViewCell {
     }
 
     @IBAction func addFavouriteButton(_ sender: UIButton) {
-        FavouriteItems.favouriteItems.checkIfInserted(favouriteId: id)
+//        FavouriteItems.favouriteItems.checkIfInserted(favouriteId: id)
     }
     
  

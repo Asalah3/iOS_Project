@@ -7,18 +7,27 @@
 
 import Foundation
 import CoreData
-class FavouriteViewModel{
-    var Result : [NSManagedObject] = []
-    func getFavouritesResult(){
-        self.Result = FavouriteItems.favouriteItems.fetchFavouriteItems()
+class FavouriteViewModel : FavouriteViewModelProtocol{
+    var localDataSource:FavouriteProtocol?
+    init(localDataSource: FavouriteProtocol) {
+        self.localDataSource = localDataSource
+    }
+    func getFavouritesResult() -> [NSManagedObject]{
+        return localDataSource?.fetchFavouriteItems() ?? []
     }
     func deleteFavouriteItem(favouriteItem : NSManagedObject){
-        FavouriteItems.favouriteItems.deleteItem(favouriteItem: favouriteItem)
+        localDataSource?.deleteItem(favouriteItem: favouriteItem)
     }
     func deleteItemById(favouriteId : Int){
-        FavouriteItems.favouriteItems.deleteItemById(favouriteId: favouriteId)
+        localDataSource?.deleteItemById(favouriteId: favouriteId)
     }
     func isExist(favouriteId : Int) -> Bool{
-        return FavouriteItems.favouriteItems.checkIfInserted(favouriteId: favouriteId)
+        return localDataSource?.checkIfInserted(favouriteId: favouriteId) ?? false
     }
+}
+protocol FavouriteViewModelProtocol{
+    func getFavouritesResult() -> [NSManagedObject]
+    func deleteFavouriteItem(favouriteItem : NSManagedObject)
+    func deleteItemById(favouriteId : Int)
+    func isExist(favouriteId : Int) -> Bool
 }

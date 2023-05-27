@@ -22,6 +22,7 @@ class FavouriteTableViewCell: UITableViewCell {
     var id : Int = 0
     var favObject : Result?
     var homeViewModel: HomeViewModelProtocol?
+    var favouriteViewModel: FavouriteViewModelProtocol?
 
     
     override func awakeFromNib() {
@@ -31,11 +32,13 @@ class FavouriteTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     func setVieModel(homeViewModel: HomeViewModelProtocol) {
         self.homeViewModel = homeViewModel
+        
+    }
+    func setFavouriteVieWModel(favouriteViewModel: FavouriteViewModelProtocol) {
+        self.favouriteViewModel = favouriteViewModel
         
     }
     
@@ -44,7 +47,8 @@ class FavouriteTableViewCell: UITableViewCell {
         if let favID = favObject?.id,
             let homeViewModel = homeViewModel, homeViewModel.localDataSource.checkIfInserted(favouriteId:favID){
             
-            favButtonColor.tintColor = UIColor.red
+//            favButtonColor.tintColor = UIColor.red
+            favButtonColor.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         } else {
             favButtonColor.tintColor = UIColor.white
             
@@ -60,6 +64,26 @@ class FavouriteTableViewCell: UITableViewCell {
         ingredientName.text = catergory.name
         categoryName.text = catergory.description
         numServings.text = String(catergory.numServings ?? 0)
+        layer.cornerRadius = 25
+
+    }
+    func SetCellValuesForFavourite(favouriteItem: NSManagedObject){
+        if let favID = favouriteItem.value(forKey: "favouriteId") as? Int,
+            let favouriteViewModel = favouriteViewModel, favouriteViewModel.isExist(favouriteId:favID){
+            
+            favButtonColor.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        } else {
+            favButtonColor.tintColor = UIColor.white
+            
+        }
+        let image : String = favouriteItem.value(forKey: "favouriteImage") as? String ?? ""
+        
+        ingredientImage.sd_setImage(with: URL(string: image), placeholderImage: UIImage(named: ""))
+        ingredientName.text = favouriteItem.value(forKey: "favouriteName") as? String
+        ingredientName.text = favouriteItem.value(forKey: "favouriteId") as? String
+        chiefName.text = favouriteItem.value(forKey: "favouriteMealCheif") as? String
+        categoryName.text = favouriteItem.value(forKey: "favouriteMealType") as? String
+        numServings.text = favouriteItem.value(forKey: "favouriteServings") as? String
         layer.cornerRadius = 25
 
     }

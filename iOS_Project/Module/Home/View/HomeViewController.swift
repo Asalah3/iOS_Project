@@ -54,6 +54,9 @@ class HomeViewController: UIViewController , UITableViewDelegate,UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavouriteTableViewCell", for: indexPath) as? FavouriteTableViewCell
+        
+        cell?.layer.cornerRadius = 25
+        
         if let homeViewModel = homeViewModel {
             cell?.setVieModel(homeViewModel: homeViewModel)
             
@@ -104,6 +107,16 @@ class HomeViewController: UIViewController , UITableViewDelegate,UITableViewData
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      
+        let recipesDeatails = UIStoryboard(name: "Details", bundle: nil).instantiateViewController(withIdentifier: "DetailsViewController")
+        
+        //
+//          UISto.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+        
+        self.navigationController?.pushViewController(recipesDeatails, animated: true)
+        
+    }
     func fetchingData(category: String){
         switch category{
             case "Popular":

@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import CoreData
 
 class FavouriteTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var favButtonColor: UIButton!
     @IBOutlet weak var ingredientView: UIView!
     @IBOutlet weak var numServings: UILabel!
     @IBOutlet weak var ingredientName: UILabel!
@@ -16,7 +18,12 @@ class FavouriteTableViewCell: UITableViewCell {
     @IBOutlet weak var chiefName: UILabel!
     @IBOutlet weak var categoryName: UILabel!
     @IBOutlet weak var grediantView: UIView!
+    var favObjects : [NSManagedObject]? = []
     var id : Int = 0
+    var favObject : Result?
+    var homeViewModel: HomeViewModelProtocol?
+
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -27,6 +34,36 @@ class FavouriteTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    func setVieModel(homeViewModel: HomeViewModelProtocol) {
+        self.homeViewModel = homeViewModel
+        
+    }
+    
+    func SetCellValues(catergory: Result){
+        favObject = catergory
+        if let favID = favObject?.id,
+            let homeViewModel = homeViewModel, homeViewModel.localDataSource.checkIfInserted(favouriteId:favID){
+            
+            favButtonColor.tintColor = UIColor.red
+        } else {
+            favButtonColor.tintColor = UIColor.white
+            
+        }
+        var categoryImage : String = ""
+        if (catergory.inspiredByURL) != nil{
+            categoryImage = (catergory.inspiredByURL)!
+        }else{
+            categoryImage = ""
+        }
+        ingredientImage.sd_setImage(with: URL(string: categoryImage), placeholderImage: UIImage(named: ""))
+        chiefName.text = catergory.slug
+        ingredientName.text = catergory.name
+        categoryName.text = catergory.description
+        numServings.text = String(catergory.numServings ?? 0)
+        layer.cornerRadius = 25
+
+    }
+    
     func setUpCell(){
         ingredientView.layer.cornerRadius = 25
         grediantView.layer.cornerRadius = 25
@@ -34,7 +71,21 @@ class FavouriteTableViewCell: UITableViewCell {
     }
 
     @IBAction func addFavouriteButton(_ sender: UIButton) {
-//        FavouriteItems.favouriteItems.checkIfInserted(favouriteId: id)
+        print("id\(favObject?.id)")
+        
+        if let homeViewModel = homeViewModel,
+           homeViewModel.localDataSource.checkIfInserted(favouriteId: favObject?.id ?? 0){
+            favButtonColor.tintColor = UIColor.white
+            homeViewModel.localDataSource.deleteItemById(favouriteId: favObject?.id ?? 0)
+
+            
+        } else {
+            favButtonColor.tintColor = UIColor.red
+            homeViewModel?.localDataSource.InsertItem(favouriteName: favObject?.name ?? "", favouriteId: favObject?.id ?? 0, favouriteImage: favObject?.thumbnailURL ?? "", favouriteMealCheif: favObject?.description ?? "", favouriteMealType: favObject?.slug ?? "", favouriteServings: String(favObject?.numServings ?? 0))
+        }
+        homeViewModel?.fetchHomeData(tag: "lunch")
+        
+        print("fav clicked")
     }
     
  

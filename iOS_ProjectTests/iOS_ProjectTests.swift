@@ -9,12 +9,14 @@ import XCTest
 @testable import iOS_Project
 
 final class iOS_ProjectTests: XCTestCase {
-
+    var networkService: NetworkServices?
     override func setUpWithError() throws {
+        networkService = NetworkServices()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
     override func tearDownWithError() throws {
+        networkService = nil
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
@@ -30,7 +32,7 @@ final class iOS_ProjectTests: XCTestCase {
     }
     func testLoadCategoriesFromURL(){
         let expectation = expectation(description: "Waiting for the API Data")
-        NetworkServices.fetchHomeCategoriesData(tag: "dinner"){ result in
+        networkService?.fetchHomeCategoriesData(tag: "dinner"){ result in
             guard let result = result else{
                 XCTFail()
                 expectation.fulfill()

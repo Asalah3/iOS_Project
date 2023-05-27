@@ -9,14 +9,14 @@ import Foundation
 import UIKit
 import CoreData
 
-protocol FavouriteProtocol{
+protocol LocalDataSourceProtocol{
     func fetchFavouriteItems() -> [NSManagedObject]
     func InsertItem(favouriteName : String , favouriteId : Int , favouriteImage : String, favouriteMealCheif: String ,favouriteMealType: String,favouriteServings: String)
     func deleteItem(favouriteItem : NSManagedObject)
     func deleteItemById(favouriteId : Int)
     func checkIfInserted(favouriteId : Int) -> Bool
 }
-class FavouriteItems: FavouriteProtocol{
+class LocalDataSource: LocalDataSourceProtocol{
     var context : NSManagedObjectContext?
     var entity : NSEntityDescription?
     

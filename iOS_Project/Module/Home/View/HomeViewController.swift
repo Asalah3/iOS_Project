@@ -7,46 +7,58 @@
 
 import UIKit
 import SDWebImage
+import CoreData
 
 class HomeViewController: UIViewController , UITableViewDelegate,UITableViewDataSource, UICollectionViewDelegate,UICollectionViewDataSource{
+    
     var selectedCategory = "Popular"
+    var networkService: NetworkServices?
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView(style: .large)
+
+    
     var categoryMealsList : Categories?
     var homeViewModel : HomeViewModel?
+    
+    @IBOutlet weak var noResultLabel: UILabel!
+    
     @IBOutlet weak var categoryCollection: UICollectionView!
     @IBOutlet weak var catergoryMeals: UITableView!
     let categoryNames = ["Popular","Breakfast","Lunch","Dinner","Dessert"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.center = view.center
+                activityIndicator.startAnimating()
+        view.addSubview(activityIndicator)
+        
         self.title = "Food Recipies"
         self.categoryMealsList = self.homeViewModel?.fetchHomeData
-        homeViewModel = HomeViewModel()
-        homeViewModel?.fetchHomeData(tag: "popular")
+        networkService = NetworkServices()
+        homeViewModel = HomeViewModel(remoteDataSource: networkService ?? NetworkServices(), localDataSource: LocalDataSource())
+        homeViewModel?.fetchHomeData(tag: "middle_eastern")
         homeViewModel?.fetchCategoriesDataToHomeViewController = {() in self.renderView()}
-        catergoryMeals.reloadInputViews()
+        catergoryMeals.reloadData()
         
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        catergoryMeals.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        categoryMealsList?.count ?? 0
+        categoryMealsList?.results?.count ?? 0
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavouriteTableViewCell", for: indexPath) as? FavouriteTableViewCell
-        
-        var categoryImage : String = ""
-        if (categoryMealsList?.results?[indexPath.row].inspiredByURL) != nil{
-            categoryImage = (categoryMealsList?.results?[indexPath.row].inspiredByURL)!
-        }else{
-            categoryImage = ""
+        if let homeViewModel = homeViewModel {
+            cell?.setVieModel(homeViewModel: homeViewModel)
+            
         }
-        cell?.ingredientImage.sd_setImage(with: URL(string: categoryImage), placeholderImage: UIImage(named: ""))
-        //cell?.chiefName.text = categoryMealsList?.results?[indexPath.row].
-        cell?.ingredientName.text = categoryMealsList?.results?[indexPath.row].name
-        cell?.categoryName.text = categoryMealsList?.results?[indexPath.row].description
-        cell?.numServings.text = String(categoryMealsList?.results?[indexPath.row].numServings ?? 0)
-        cell?.layer.cornerRadius = 25
+        cell?.SetCellValues(catergory: (categoryMealsList?.results?[indexPath.row])!)
 
         return cell ?? UITableViewCell()
     }
@@ -127,11 +139,21 @@ class HomeViewController: UIViewController , UITableViewDelegate,UITableViewData
     func renderView(){
         DispatchQueue.main.async {
             self.categoryMealsList = self.homeViewModel?.fetchHomeData
+            if self.categoryMealsList?.results?.count == 0 || self.categoryMealsList?.results == nil{
+                self.noResultLabel.text = "No Result"
+            }else{
+                self.noResultLabel.text = ""
+
+            }
             self.catergoryMeals.reloadData()
             self.categoryCollection.reloadData()
+            self.activityIndicator.stopAnimating()
 
         }
     }
     
+    
+    
 
+    
 }

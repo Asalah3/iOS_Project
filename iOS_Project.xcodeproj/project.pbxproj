@@ -36,9 +36,9 @@
 		CF7795D02A2039EF004C50B3 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF7795CF2A2039EF004C50B3 /* Utilities.swift */; };
 		CF8557AB2A20A3460019137E /* (null) in Sources */ = {isa = PBXBuildFile; };
 		CF8557B52A20AEB60019137E /* (null) in Sources */ = {isa = PBXBuildFile; };
-		CF89936A2A21499C0027E45A /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8993692A21499C0027E45A /* HomeViewModel.swift */; };
-		CF89936C2A2149AF0027E45A /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF89936B2A2149AF0027E45A /* ResponseModel.swift */; };
-		CF89936E2A2149BB0027E45A /* NetWorkServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF89936D2A2149BB0027E45A /* NetWorkServices.swift */; };
+		DBEDFD0B2A22199B00897085 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEDFD0A2A22199B00897085 /* ResponseModel.swift */; };
+		DBEDFD0D2A221BC800897085 /* NetWorkServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBEDFD0C2A221BC800897085 /* NetWorkServices.swift */; };
+		DBF20EF02A2248F10030D9D8 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF20EEF2A2248F10030D9D8 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,9 +93,9 @@
 		CF40F3092A20C2D200597260 /* CategoryCollectionViewCelll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCelll.swift; sourceTree = "<group>"; };
 		CF40F30B2A20C3D900597260 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		CF7795CF2A2039EF004C50B3 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
-		CF8993692A21499C0027E45A /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewModel.swift; path = ../../../../../../Downloads/HomeViewModel.swift; sourceTree = "<group>"; };
-		CF89936B2A2149AF0027E45A /* ResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResponseModel.swift; path = ../../../../Downloads/ResponseModel.swift; sourceTree = "<group>"; };
-		CF89936D2A2149BB0027E45A /* NetWorkServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetWorkServices.swift; path = ../../../../Downloads/NetWorkServices.swift; sourceTree = "<group>"; };
+		DBEDFD0A2A22199B00897085 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
+		DBEDFD0C2A221BC800897085 /* NetWorkServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetWorkServices.swift; path = iOS_Project/NetWorkLayer/NetWorkServices.swift; sourceTree = SOURCE_ROOT; };
+		DBF20EEF2A2248F10030D9D8 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F5A04FA24A85C70D0A5A0402 /* Pods_iOS_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA94E930C307E655779DB15 /* Pods-iOS_Project-iOS_ProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_Project-iOS_ProjectUITests.debug.xcconfig"; path = "Target Support Files/Pods-iOS_Project-iOS_ProjectUITests/Pods-iOS_Project-iOS_ProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -223,7 +223,7 @@
 		C9BB22592A1F444200C73954 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				CF89936B2A2149AF0027E45A /* ResponseModel.swift */,
+				DBEDFD0A2A22199B00897085 /* ResponseModel.swift */,
 				C9BB226D2A1F72B000C73954 /* LocalDataSource.swift */,
 			);
 			path = Models;
@@ -232,6 +232,7 @@
 		C9BB225A2A1F446600C73954 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				DBF20EEE2A2248D30030D9D8 /* ViewModels */,
 				CF8557A92A20A3030019137E /* View */,
 			);
 			path = Home;
@@ -260,7 +261,7 @@
 		C9BB226A2A1F482600C73954 /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
-				CF89936D2A2149BB0027E45A /* NetWorkServices.swift */,
+				DBEDFD0C2A221BC800897085 /* NetWorkServices.swift */,
 			);
 			path = NetworkLayer;
 			sourceTree = "<group>";
@@ -292,6 +293,14 @@
 				C97B63812A1FBEE4005D11AD /* AppDelegate.swift */,
 			);
 			path = BaseModules;
+			sourceTree = "<group>";
+		};
+		DBF20EEE2A2248D30030D9D8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				DBF20EEF2A2248F10030D9D8 /* HomeViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -536,11 +545,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBF20EF02A2248F10030D9D8 /* HomeViewModel.swift in Sources */,
 				C9BB226E2A1F72B000C73954 /* LocalDataSource.swift in Sources */,
 				CF8557AB2A20A3460019137E /* (null) in Sources */,
 				C97B63862A1FBEE4005D11AD /* ViewController.swift in Sources */,
 				CF8557B52A20AEB60019137E /* (null) in Sources */,
+				DBEDFD0D2A221BC800897085 /* NetWorkServices.swift in Sources */,
 				C9BB226C2A1F5DA100C73954 /* FavouriteTableViewCell.swift in Sources */,
+				DBEDFD0B2A22199B00897085 /* ResponseModel.swift in Sources */,
 				CF40F30A2A20C2D200597260 /* CategoryCollectionViewCelll.swift in Sources */,
 				C97B638C2A1FBEE4005D11AD /* iOS_Project.xcdatamodeld in Sources */,
 				C97B63822A1FBEE4005D11AD /* AppDelegate.swift in Sources */,

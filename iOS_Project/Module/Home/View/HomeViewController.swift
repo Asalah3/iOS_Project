@@ -15,7 +15,7 @@ class HomeViewController: UIViewController , UITableViewDelegate,UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Food Recipies"
-        NetworkServices.fetchHomeData(tag: "breakfast"){ (result) in
+        NetworkServices.fetchHomeCategoriesData(tag: "breakfast"){ (result) in
             
         }
 
@@ -39,6 +39,7 @@ class HomeViewController: UIViewController , UITableViewDelegate,UITableViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "item", for: indexPath) as? CategoryCollectionViewCell
         
+        cell?.setUpCell()
         cell?.catergoryName.text = categoryNames[indexPath.row]
         cell?.catergoryImage.image = UIImage(named: categoryNames[indexPath.row])
     

@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: - Response
-struct Response:Decodable {
+struct Categories:Decodable {
     let count: Int?
     let results: [Result]?
 }

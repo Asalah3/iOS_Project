@@ -46,6 +46,8 @@ class HomeViewController: UIViewController , UITableViewDelegate,UITableViewData
         cell?.ingredientName.text = categoryMealsList?.results?[indexPath.row].name
         cell?.categoryName.text = categoryMealsList?.results?[indexPath.row].description
         cell?.numServings.text = String(categoryMealsList?.results?[indexPath.row].numServings ?? 0)
+        cell?.layer.cornerRadius = 25
+
         return cell ?? UITableViewCell()
     }
     

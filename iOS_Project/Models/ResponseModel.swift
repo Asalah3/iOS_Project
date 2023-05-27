@@ -1,14 +1,120 @@
 //
-//  ResponseModel.swift
-//  iOS_Project
+//  SimilaritiesRecipe.swift
+//  testApi
 //
-//  Created by Esraa AbdElfatah on 27/05/2023.
+//  Created by Asalah Sayed on 27/05/2023.
 //
-
 
 import Foundation
 
-// MARK: - Response
+struct Meal: Codable {
+    let thumbnailAltText: String?
+    let videoURL: String?
+    let language: String?
+    let numServings: Int?
+    let instructions: [Instruction]?
+    let thumbnailURL: String?
+    let country: String?
+    let id: Int?
+    let sections: [Section]?
+    let originalVideoURL: String?
+    let description, name: String?
+
+    enum CodingKeys: String, CodingKey {
+        case thumbnailAltText = "thumbnail_alt_text"
+        case videoURL = "video_url"
+        case language
+        case numServings = "num_servings"
+        case instructions
+        case thumbnailURL = "thumbnail_url"
+        case country, id
+        case sections
+        case originalVideoURL = "original_video_url"
+        case description, name
+    }
+}
+
+
+// MARK: - Instruction
+struct Instruction: Codable {
+    let endTime: Int?
+    let temperature, appliance: String?
+    let id: Int?
+    let displayText: String?
+    let position, startTime: Int?
+
+    enum CodingKeys: String, CodingKey {
+        case endTime = "end_time"
+        case temperature, appliance, id
+        case displayText = "display_text"
+        case position
+        case startTime = "start_time"
+    }
+}
+
+
+// MARK: - Section
+struct Section: Codable {
+    let components: [Component]?
+    let name: String?
+    let position: Int?
+}
+
+// MARK: - Component
+struct Component: Codable {
+    let rawText, extraComment: String?
+    let position: Int?
+    let measurements: [Measurement]?
+    let ingredient: Ingredient?
+    let id: Int?
+
+    enum CodingKeys: String, CodingKey {
+        case rawText = "raw_text"
+        case extraComment = "extra_comment"
+        case position, measurements, ingredient, id
+    }
+}
+
+// MARK: - Ingredient
+struct Ingredient: Codable {
+    let updatedAt, id: Int?
+    let name, displaySingular, displayPlural: String?
+    let createdAt: Int?
+
+    enum CodingKeys: String, CodingKey {
+        case updatedAt = "updated_at"
+        case id, name
+        case displaySingular = "display_singular"
+        case displayPlural = "display_plural"
+        case createdAt = "created_at"
+    }
+}
+
+// MARK: - Measurement
+struct Measurement: Codable {
+    let id: Int
+    let quantity: String
+    let unit: Unit
+}
+
+// MARK: - Unit
+struct Unit: Codable {
+    let name, abbreviation, displaySingular, displayPlural: String
+    let system: System
+
+    enum CodingKeys: String, CodingKey {
+        case name, abbreviation
+        case displaySingular = "display_singular"
+        case displayPlural = "display_plural"
+        case system
+    }
+}
+
+enum System: String, Codable {
+    case imperial = "imperial"
+    case metric = "metric"
+    case none = "none"
+}
 struct Categories:Decodable {
     let count: Int?
     let results: [Result]?
@@ -75,184 +181,30 @@ struct Recipe :Decodable{
     let servingsNounSingular: String?
 }
 
+struct SimilaritiesRecipe:Decodable {
+    let count: Int?
+    let results: [SimilaritiesRecipeResult]?
+}
 
-
-
-// MARK: - Section
-struct Section {
-    let components: [Component]?
+// MARK: - Result
+struct SimilaritiesRecipeResult :Decodable{
+    let videoID: Int?
     let name: String?
-    let position: Int?
-}
-
-// MARK: - Component
-struct Component {
-    let id, position: Int?
-    let measurements: [Measurement]?
-    let rawText, extraComment: String?
-    let ingredient: Ingredient?
-}
-
-// MARK: - Ingredient
-struct Ingredient {
-    let updatedAt: Int?
-    let name: String?
-    let createdAt: Int?
-    let displayPlural: String?
+    let originalVideoURL: String?
+    let numServings: Int?
+    let thumbnailURL: String?
+    let videoURL: String?
     let id: Int?
-    let displaySingular: String?
+    let description: String?
+    enum CodingKeys: String, CodingKey {
+        case numServings = "num_servings"
+        case videoID = "video_id"
+        case id
+        case name
+        case description
+        case thumbnailURL = "thumbnail_url"
+        case videoURL = "video_url"
+        case originalVideoURL = "original_video_url"
+    }
 }
 
-// MARK: - Measurement
-struct Measurement {
-    let unit: Unit?
-    let quantity: String?
-    let id: Int?
-}
-
-// MARK: - Unit
-struct Unit {
-    let displayPlural: DisplayPlural?
-    let displaySingular, abbreviation: Abbreviation?
-    let system: System?
-    let name: UnitName?
-}
-
-enum Abbreviation {
-    case aDash
-    case bunch
-    case c
-    case can
-    case cup
-    case egg
-    case empty
-    case g
-    case kg
-    case lb
-    case loaf
-    case mL
-    case oz
-    case pinch
-    case slice
-    case stick
-    case strip
-    case tablespoon
-    case tbsp
-    case teaspoon
-    case tsp
-}
-
-enum DisplayPlural {
-    case bunches
-    case cans
-    case cups
-    case dashes
-    case eggs
-    case empty
-    case g
-    case kg
-    case lb
-    case loaves
-    case mL
-    case oz
-    case pinches
-    case slices
-    case sticks
-    case strips
-    case tablespoons
-    case teaspoons
-}
-
-enum UnitName {
-    case aDash
-    case bunch
-    case can
-    case cup
-    case egg
-    case empty
-    case gram
-    case kilogram
-    case loaf
-    case milliliter
-    case ounce
-    case pinch
-    case pound
-    case slice
-    case stick
-    case strip
-    case tablespoon
-    case teaspoon
-}
-
-enum System {
-    case imperial
-    case metric
-    case none
-}
-
-// MARK: - Tag
-struct Tag {
-    let rootTagType: RootTagTypeEnum?
-    let name: String?
-    let id: Int?
-    let displayName: String?
-    let type: RootTagTypeEnum?
-}
-
-enum RootTagTypeEnum {
-    case appliance
-    case asian
-    case businessTags
-    case cookingStyle
-    case cuisine
-    case dietary
-    case difficulty
-    case equipment
-    case european
-    case featurePage
-    case healthy
-    case holiday
-    case holidays
-    case meal
-    case occasion
-    case seasonal
-}
-
-// MARK: - TotalTimeTier
-struct TotalTimeTier {
-    let tier, displayTier: String?
-}
-
-enum TypeEnum {
-    case recipe
-}
-
-// MARK: - UserRatings
-struct UserRatings {
-    let countPositive: Int?
-    let score: Double?
-    let countNegative: Int?
-}
-
-enum RecipeVideoAdContent {
-    case editorialSponsorship
-    case none
-    case undetermined
-}
-
-enum ServingsNounSingular {
-    case biscuit
-    case pancake
-    case serving
-    case waffle
-}
-
-// MARK: - Topic
-struct Topic {
-    let name, slug: String?
-}
-
-enum ResultVideoAdContent {
-    case coBranded
-    case none
-}

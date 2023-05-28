@@ -15,10 +15,10 @@ class HomeViewController: UIViewController , UITableViewDelegate,UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Food Recipies"
-//        NetworkServices.fetchHomeCategoriesData(tag: "breakfast"){ (result) in
-//
-//        }
-
+        //        NetworkServices.fetchHomeCategoriesData(tag: "breakfast"){ (result) in
+        //
+        //        }
+        
         
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -30,7 +30,7 @@ class HomeViewController: UIViewController , UITableViewDelegate,UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavouriteTableViewCell", for: indexPath) as? FavouriteTableViewCell
         
         cell?.layer.cornerRadius = 25
-
+        
         return cell ?? UITableViewCell()
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -43,12 +43,22 @@ class HomeViewController: UIViewController , UITableViewDelegate,UITableViewData
         cell?.setUpCell()
         cell?.catergoryName.text = categoryNames[indexPath.row]
         cell?.catergoryImage.image = UIImage(named: categoryNames[indexPath.row])
-
+        
         return cell ?? UICollectionViewCell()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 180
     }
-
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+      
+        let recipesDeatails = UIStoryboard(name: "Details", bundle: nil).instantiateViewController(withIdentifier: "DetailsViewController")
+        
+        //
+//          UISto.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+        
+        self.navigationController?.pushViewController(recipesDeatails, animated: true)
+        
+    }
 }
